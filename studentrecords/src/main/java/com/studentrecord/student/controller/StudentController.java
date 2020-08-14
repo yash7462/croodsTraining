@@ -11,11 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.studentrecord.student.dao.StudentDao;
 import com.studentrecord.student.exception.ResourceNotFoundException;
 import com.studentrecord.student.model.StudentRecords;
+import com.studentrecord.student.model.StudentRecordsDTO;
 
 @RestController
 @RequestMapping("/studentprofile")
@@ -24,9 +26,10 @@ public class StudentController {
 	@Autowired
 	StudentDao studentdao;
 
-	/*
-	 * @GetMapping("/") public String getDemo() { return "hello world"; }
-	 */
+	@GetMapping("/{firstName}")
+	public List<StudentRecordsDTO> getByFirstName(@RequestParam(value="firstName")String firstName) {
+		return studentdao.getByFirstName(firstName);
+	}
 
 	/**
 	 * get all student records

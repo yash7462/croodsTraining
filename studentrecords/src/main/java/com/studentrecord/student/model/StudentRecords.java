@@ -20,13 +20,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Table(name = "studentprofile")
-@Getter
-@Setter
+@Data
 public class StudentRecords {
 
 	@Id
@@ -36,20 +36,20 @@ public class StudentRecords {
 	private long id;
 
 	@Column(name = "firstname")
-	private String FirstName;
+	private String firstName;
 
 	@Column(name = "lastname")
-	private String LastName;
+	private String lastName;
 
 	@Column(name = "mobileno")
-	private long MobileNo;
+	private long mobileNo;
 
 	@Column(name = "email")
 	private String email;
 
 	@Column(name = "dateofbirth")
 	@Temporal(TemporalType.DATE)
-	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	// @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private Date DateOfBirth;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, optional = false)
@@ -60,24 +60,6 @@ public class StudentRecords {
 	public StudentRecords() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	public StudentRecords(long id, String firstName, String lastName, long mobileNo, String email, Date dateOfBirth,
-			Country country) {
-		super();
-		this.id = id;
-		FirstName = firstName;
-		LastName = lastName;
-		MobileNo = mobileNo;
-		this.email = email;
-		DateOfBirth = dateOfBirth;
-		this.country = country;
-	}
-
-	@Override
-	public String toString() {
-		return "StudentRecords [id=" + id + ", FirstName=" + FirstName + ", LastName=" + LastName + ", MobileNo="
-				+ MobileNo + ", email=" + email + ", DateOfBirth=" + DateOfBirth + ", country=" + country + "]";
 	}
 
 }
