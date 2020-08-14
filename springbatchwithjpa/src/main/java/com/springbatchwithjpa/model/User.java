@@ -13,9 +13,6 @@ public class User {
 	private long id;
 	private String firstName;
 	private String lastName;
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 }
