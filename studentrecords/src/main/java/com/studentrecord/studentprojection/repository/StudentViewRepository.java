@@ -11,6 +11,12 @@ import com.studentrecord.studentprojection.model.StudentViewDTO;
 @Repository
 public interface StudentViewRepository extends JpaRepository<StudentView, Long> {
 	
+	/**
+	 * "SELECT new com.studentrecord.studentprojection.model.StudentViewDTO(s.name, s.age, s.branch) FROM StudentView s"
+	 *		   \__________________________________________________________/ \_____________________/       \_________/
+	 *              |this is full package name which you want to store|       |Field you want|             |this is Class/Entity name not table name|		
+	 * @return
+	 */
 	@Query("SELECT new com.studentrecord.studentprojection.model.StudentViewDTO(s.name, s.age, s.branch) FROM StudentView s")
 	List<StudentViewDTO> getStudentNameAgeAndBranch();
 }
