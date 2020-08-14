@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.studentrecord.studentprojection.model.StudentView;
+import com.studentrecord.studentprojection.model.StudentViewDTO;
 import com.studentrecord.studentprojection.repository.StudentViewRepository;
 
 @RestController
@@ -19,9 +20,16 @@ public class StudentProjectionController {
 	@Autowired
 	StudentViewRepository studentViewRepository;
 	
+	
+	
 	@GetMapping("/")
 	public List<StudentView> getAllStudent() {
 		return studentViewRepository.findAll();
+	}
+	
+	@GetMapping("/nameageandbranch")
+	public List<StudentViewDTO> getAllStudentNameAgeAndBranch() {
+		return studentViewRepository.getStudentNameAgeAndBranch();
 	}
 	
 	@PostMapping("/")
