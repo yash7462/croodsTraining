@@ -14,7 +14,7 @@ import com.studentrecord.studentprojection.model.StudentViewDTO;
 import com.studentrecord.studentprojection.repository.StudentViewRepository;
 
 @RestController
-@RequestMapping("/student/somedetail")
+@RequestMapping("/student/detail")
 public class StudentProjectionController {
 	
 	@Autowired
