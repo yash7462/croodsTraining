@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.studentrecord.student.repository;
 
 import javax.transaction.Transactional;
 
@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.example.demo.model.StudentRecords;
+import com.studentrecord.student.model.StudentRecords;
 
 public interface StudentRepository extends JpaRepository<StudentRecords, Long> {
 	

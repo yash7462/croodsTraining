@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.studentrecord.student.model;
 
 import java.util.Date;
 
